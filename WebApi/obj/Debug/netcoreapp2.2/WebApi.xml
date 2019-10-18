@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:WebApi.Controllers.ClientesController.Get">
+            <summary>
+            Trae todos los clientes.
+            </summary>
+            <returns>Lista de todos los clientes.</returns>
+        </member>
+        <member name="M:WebApi.Controllers.ClientesController.Get(System.Int32)">
+            <summary>
+            Retorna un cliente.
+            </summary>
+            <param name="id"></param>
+            <returns>Un cliente</returns>
+            <response code="404">Si el cliente no existe</response> 
+            <response code="200">Devuelve el cliente solicitado</response>
+        </member>
+        <member name="M:WebApi.Controllers.ClientesController.Post(Banco.WebApi.DTOs.Requests.ClienteAddDTO)">
+             <summary>
+             Crea un cliente.
+             </summary>
+             <remarks>
+             Ejemplo de request:
+            
+                 POST /Cliente
+                 {
+                    "Document": 0,
+                    "name": "Juan",
+                    "lastname": "Perez",
+                    "Date": "2019-10-11"
+                 }
+            
+             </remarks>
+             <param name="request"></param>
+             <returns>Un nuevo cliente creado</returns>
+             <response code="201">Devuelve el nuevo cliente creado</response>
+        </member>
+        <member name="M:WebApi.Controllers.ProductsController.GetProducts">
+            <summary>
+            Trae todos los Products.
+            </summary>
+            <returns>Lista de todos los productos.</returns>
+        </member>
+        <member name="M:WebApi.Controllers.ProductsController.GetProducts(System.Int32)">
+            <summary>
+            Retorna un Producto por ID.
+            </summary>
+            <param name="id"></param>
+            <returns>Un cliente</returns>
+            <response code="404">Si el Producto no existe</response> 
+            <response code="200">Devuelve el Producto solicitado</response>
+        </member>
+        <member name="M:WebApi.Controllers.ProductsController.Put(System.Int32,Banco.WebApi.DTOs.Requests.ProductUpdateDTO)">
+             <summary>
+             Actualiza un Producto.
+             </summary>
+             <remarks>
+             Ejemplo de request:
+            
+                 PUT /Clientes
+                 {
+                    "id": "1",
+                    "apellido": "Perez",
+                    "nombre": "Juan",
+                    "fechaNacimiento": "01/01/1990"
+                 }
+            
+             </remarks>
+             <param name="id"></param>
+             <param name="request"></param>
+             <response code="400">Si el id del query string no es igual al del body</response> 
+             <response code="200">Devuelve el Producto actualizado</response>
+        </member>
+    </members>
+</doc>
